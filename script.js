@@ -36,7 +36,7 @@ btnOperations.forEach((btn) => {
             num1 = parseInt(displayOperationLogic.split(operation));
         }
         else {
-            let calculation = operate(operation, num1, parseInt(displayInputLogic.split(operation))).toString();
+            let calculation = (Math.round(operate(operation, num1, parseInt(displayInputLogic.split(operation))) * 100) / 100).toString();
             operation = e.target.textContent;
             displayOperationLogic = (calculation + operation);
             displayOperation.textContent = displayOperationLogic;
@@ -45,6 +45,18 @@ btnOperations.forEach((btn) => {
             num1 = parseInt(displayOperationLogic.split(operation));
         }
     });
+});
+
+btnEval.addEventListener('click', (e) => {
+    let check = displayOperationLogic.includes('=');
+
+    if(displayOperationLogic != "" && !check) {
+        displayOperation.textContent += (displayInput.textContent + e.target.textContent);
+        displayOperationLogic += (displayInputLogic + e.target.textContent);
+        let calculation = (Math.round(operate(operation, num1, parseInt(displayInputLogic.split(operation))) * 100) / 100).toString();
+        displayInput.textContent = calculation;
+        displayInputLogic = calculation;
+    }
 });
 
 btnClear.addEventListener('click', () => {
