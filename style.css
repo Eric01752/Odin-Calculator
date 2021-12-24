@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,10 +35,27 @@ button {
 }
 
 .display {
-    font-size: 32px;
     border: 1px black solid;
-    padding: 10px 24px;
     background-color: white;
+    width: 300px;
+    height: 75px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.display-operation {
+    font-size: 20px;
+    height: 25px;
+    margin-top: 6px;
+    margin-right: 4px;
+}
+
+.display-input {
+    font-size: 32px;
+    height: 50px;
+    margin-right: 4px;
 }
 
 .btns-container {
@@ -57,11 +74,4 @@ button {
 
 .row, .row-last {
     margin-top: 10px;
-}
-
-.row-last {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    gap: 10px;
 }
