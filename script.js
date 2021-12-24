@@ -9,8 +9,8 @@ const displayOperation = document.querySelector('.display-operation');
 const btnNums = document.querySelectorAll('.btn-update');
 const btnOperations = document.querySelectorAll('.btn-operation');
 
-const btnClear = document.querySelector('#btn-clear');
-const btnEval = document.querySelector('#btn-eval');
+const btnClear = document.querySelector('.btn-clear');
+const btnEval = document.querySelector('.btn-eval');
 
 btnNums.forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -45,6 +45,13 @@ btnOperations.forEach((btn) => {
             num1 = parseInt(displayOperationLogic.split(operation));
         }
     });
+});
+
+btnClear.addEventListener('click', () => {
+    displayInputLogic = "0";
+    displayInput.textContent = "0";
+    displayOperationLogic = "";
+    displayOperation.textContent = "";
 });
 
 function add(a, b) {
